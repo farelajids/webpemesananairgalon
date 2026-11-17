@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistem Pemesanan dan Pengiriman Air Galon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HALAMAN LOGIN ===================== -->
+  <main id="loginView" class="login">
+    <section class="login-hero">
+      <svg class="galon-art" viewBox="0 0 120 180" aria-hidden="true">
+        <rect x="44" y="4" width="32" height="18" rx="4" fill="#0b3954"/>
+        <path d="M40 22h40l14 22v112a14 14 0 0 1-14 14H40a14 14 0 0 1-14-14V44z" fill="#e6f7fa" stroke="#0b3954" stroke-width="4"/>
+        <path d="M28 96c14-8 24 8 38 0s24-8 26 0v60a12 12 0 0 1-12 12H40a12 12 0 0 1-12-12z" fill="#1fb6c9"/>
+        <path d="M28 96c14-8 24 8 38 0s24-8 26 0" fill="none" stroke="#0b3954" stroke-width="3"/>
+      </svg>
+      <h1>Sistem Pemesanan dan Pengiriman Air Galon</h1>
+      <p>Pesan galon tanpa telepon dan tanpa catatan yang terlewat. Pantau status pesanan sampai galon tiba di depan pintu.</p>
+    </section>
+
+    <section class="login-panel">
+      <form id="loginForm" class="login-card" autocomplete="off">
+        <h2>Masuk</h2>
+        <label>Username
+          <input type="text" id="loginUser" required placeholder="Masukkan username">
+        </label>
+        <label>Password
+          <input type="password" id="loginPass" required placeholder="Masukkan password">
+        </label>
+        <p id="loginError" class="form-error" role="alert"></p>
+        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===================== APLIKASI (SETELAH LOGIN) ===================== -->
+  <div id="appView" class="app" hidden>
+    <aside class="sidebar">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0 0 14 0c0-3.5-3-7-7-13z" fill="#1fb6c9"/></svg>
+        <span>QU<b>WATER</b></span>
+      </div>
+      <nav id="nav" aria-label="Menu utama"></nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h1 id="pageTitle">Dashboard</h1>
+        <div class="user-box">
+          <div class="user-info">
+            <strong id="userName">-</strong>
+            <span id="userRole" class="role-tag">-</span>
+          </div>
+          <button id="btnLogout" class="btn btn-ghost">Keluar</button>
+        </div>
+      </header>
+      <section id="content" class="content"></section>
+    </div>
+  </div>
+
+  <!-- Modal & Toast -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h3 id="modalTitle"></h3>
+        <button class="modal-close" id="modalClose" aria-label="Tutup">&times;</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
